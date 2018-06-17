@@ -54,6 +54,7 @@ function getTransaction() {
   $('#checkTransaction .loader-container').show();
   $('#checkTransaction .search-icon').hide();
   $('#checkTransaction').attr('disabled', 'disabled');
+  $('#transactionDetail').empty();
 
   $.ajax({
     url: window.GravAdmin.config.current_url + '?task=getTransaction&transaction_id=' + transactionId,
