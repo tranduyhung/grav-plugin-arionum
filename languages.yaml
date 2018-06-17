@@ -1,0 +1,37 @@
+en:
+  PLUGIN_ARIONUM:
+    ARIONUM: Arionum
+    NAME: Name
+    WALLET_ADDRESSES: Wallet Addresses
+    WALLET_ADDRESSES_HELP: Wallet addresses which you want to track their balances.
+    ADDRESS: Address
+    INVALID_ADDRESS: Invalid address.
+    ARIONUM_CONNECTION_FAILED: Unable to connect to Arionum network.
+    EXCHANGE_CONNECTION_FAILED: Unable to get data from mercatox.com.
+    FIAT_CONNECTION_FAILED: Unable to get data from blockchain.info.
+    WALLETS: Wallets
+    EXCHANGES: Exchanges
+    CURRENCIES: Currencies
+    CURRENCIES_HELP: Select the currencies which you want to convert ARO to.
+    CHECK_TRANSACTION: Check Transaction
+    INVALID_TRANSACTION_ID: Invalid Transaction ID.
+    TRANSACTION_BLOCK: Block
+    TRANSACTION_CONFIRMATIONS: Comfirmations
+    TRANSACTION_DATE: Date
+    TRANSACTION_DST: Recipient
+    TRANSACTION_FEE: Fee
+    TRANSACTION_HEIGHT: Block Height
+    TRANSACTION_ID: Transaction ID
+    TRANSACTION_MESSAGE: Message
+    TRANSACTION_PUBLIC_KEY: Public Key
+    TRANSACTION_SIGNATURE: Signature
+    TRANSACTION_SRC: Sender
+    TRANSACTION_TYPE: Type
+    TRANSACTION_VAL: Amount
+    TRANSACTION_VERSION: Version
+    TRANSACTION_TYPE: Type
+    GET_TRANSACTIONS: Get Transactions
+    CHECK: Check
+    GET: Get
+    RECEIVE: Receive
+    SEND: Send

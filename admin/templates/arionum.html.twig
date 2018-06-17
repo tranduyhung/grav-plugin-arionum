@@ -1,0 +1,132 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block titlebar %}
+    <h1><i class="fa fa-fw fa-dollar"></i> {{ "PLUGIN_ARIONUM.ARIONUM"|tu }}</h1>
+{% endblock %}
+
+{% block widgets %}
+<div class="default-box-shadow arionum-widget">
+  <div id="exchanges" class="admin-block">
+    <div class="button-bar">
+      <a href="#" class="button button-small" id="refreshExchanges"><i class="fa fa-refresh"></i></a>
+    </div>
+    <h1>{{ 'PLUGIN_ARIONUM.EXCHANGES'|tu }}</h1>
+      <div class="widget-content">
+        <table>
+          <thead>
+            <th>ARO</th>
+            {% for currency in currencies %}
+            <th>{{ currency }}</th>
+            {% endfor %}
+          </thead>
+          <tbody>
+            <tr>
+              <td id="currencyARO">1</td>
+              {% for currency in currencies %}
+              {% set round = (currency != 'BTC' and currency != 'ETH') ? '6' : '8' %}
+              <td class="currency" id="currency{{ currency }}" data-name="{{ currency }}" data-round="{{ round }}">
+                <span class="loader-container">
+                  <i class="fa fa-refresh fa-spin"></i>
+                </span>
+                <span class="value"></span>
+              </td>
+              {% endfor %}
+            </tr>
+        </table>
+      </div>
+  </div>
+</div>
+
+{% if wallets|length > 0 %}
+<div class="default-box-shadow arionum-widget">
+  <div id="wallets" class="admin-block">
+    <div class="button-bar">
+      <a href="#" class="button button-small" id="refreshWallets"><i class="fa fa-refresh"></i></a>
+    </div>
+    <h1>{{ 'PLUGIN_ARIONUM.WALLETS'|tu }}</h1>
+      <div class="widget-content">
+        <table>
+          <thead>
+            <th></th>
+            <th>ARO</th>
+            {% for currency in currencies %}
+            <th>{{ currency }}</th>
+            {% endfor %}
+          </thead>
+          <tbody>
+            {% for wallet in wallets %}
+            {% set currencyIndex = loop.index %}
+            <tr>
+              <td class="wallet hint--bottom" data-hint="{{ wallet.address }}" data-index="{{ currencyIndex }}">{{ wallet.name }}</td>
+              <td class="balance" id="wallet{{ currencyIndex }}ARO">
+                <span class="loader-container">
+                  <i class="fa fa-refresh fa-spin"></i>
+                </span>
+                <span class="value"></span>
+              </td>
+              {% for currency in currencies %}
+              <td class="exchange" id="wallet{{ currencyIndex }}{{ currency }}">
+                <span class="loader-container">
+                  <i class="fa fa-refresh fa-spin"></i>
+                </span>
+                <span class="value"></span>
+              </td>
+              {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+      </div>
+  </div>
+</div>
+{% endif %}
+
+<div class="default-box-shadow arionum-widget">
+  <div id="transaction" class="admin-block">
+    <h1>{{ 'PLUGIN_ARIONUM.CHECK_TRANSACTION'|tu }}</h1>
+    <div class="widget-content">
+      <form>
+        <div class="grid">
+          <div class="size-1-2">
+            <input id="transactionId" value="" placeholder="{{ 'PLUGIN_ARIONUM.TRANSACTION_ID'|tu|e('html') }}" class="large" type="text">
+          </div>
+          <div class="size-1-2">
+            <button class="button" id="checkTransaction"><span class="loader-container"><i class="fa fa-refresh fa-spin"></i></span><i class="search-icon fa fa-search"></i> {{ 'PLUGIN_ARIONUM.CHECK'|tu }}</button>
+          </div>
+        </div>
+      </form>
+      <div id="transactionDetail"></div>
+    </div>
+  </div>
+</div>
+
+<div class="default-box-shadow arionum-widget">
+  <div id="transactions" class="admin-block">
+    <h1>{{ 'PLUGIN_ARIONUM.GET_TRANSACTIONS'|tu }}</h1>
+    <div class="widget-content">
+      <form>
+        <div class="grid">
+          <div class="size-1-2">
+            <select id="walletSelection">
+              {% for wallet in wallets %}
+                <option value="{{ wallet.address }}">{{ wallet.name}}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="size-1-2">
+            <button class="button" id="getTransactions"><span class="loader-container"><i class="fa fa-refresh fa-spin"></i></span><i class="search-icon fa fa-search"></i> {{ 'PLUGIN_ARIONUM.GET'|tu }}</button>
+          </div>
+        </div>
+      </form>
+      <table id="transactionList">
+        <thead>
+          <th>{{ 'PLUGIN_ARIONUM.TRANSACTION_ID'|tu }}</th>
+          <th>{{ 'PLUGIN_ARIONUM.TRANSACTION_TYPE'|tu }}</th>
+          <th>{{ 'PLUGIN_ARIONUM.TRANSACTION_DATE'|tu }}</th>
+          <th>{{ 'PLUGIN_ARIONUM.TRANSACTION_VAL'|tu }}</th>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

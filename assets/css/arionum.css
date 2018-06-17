@@ -1,0 +1,44 @@
+.arionum-widget {
+  margin-bottom: 1.5rem;
+}
+
+.arionum-widget .button .loader-container {
+  display: none;
+}
+
+.arionum-widget .widget-content {
+  padding: 1rem;
+}
+
+.arionum-widget input {
+  width: 100%;
+}
+
+.arionum-widget li span:first-child,
+#wallets tr td:first-child {
+  font-weight: bold;
+}
+
+.arionum-widget button {
+  margin-left: 1rem;
+}
+
+#transactionList {
+  display: none;
+}
+
+#transactionList td.transaction-id {
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+
+#transactionList td.transaction-id:hover {
+  cursor: pointer;
+}
+
+#wallets tr th,
+#wallets tr td {
+  padding: .375rem;
+}

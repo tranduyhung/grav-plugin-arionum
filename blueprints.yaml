@@ -1,0 +1,71 @@
+name: Arionum
+version: 1.0.0
+description: Basic tools for Arionum cryptocurrency: check wallet balance, convert balance to other currencies, check transactions.
+icon: dollar
+author:
+  name: Hung Tran
+  url: https://flatfiledeveloper.com
+  email: flatfiledeveloper@gmail.com
+keywords: plugin, arionum, crypto, crytocurrency, blockchain, wallet, aro, bitcoin
+homepage: https://github.com/tranduyhung/grav-plugin-arionum
+bugs: https://github.com/tranduyhung/grav-plugin-arionum/issues
+license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.4.0' }
+  - { name: admin, version: '>=1.7.0' }
+
+form:
+  validation: loose
+  fields:
+    enabled:
+      type: hidden
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+    wallet_addresses:
+      type: list
+      style: vertical
+      label: PLUGIN_ARIONUM.WALLET_ADDRESSES
+      help: PLUGIN_ARIONUM.WALLET_ADDRESSES_HELP
+      fields:
+        .name:
+          type: text
+          label: PLUGIN_ARIONUM.NAME
+        .address:
+          type: text
+          label: PLUGIN_ARIONUM.ADDRESS
+    currencies:
+      type: checkboxes
+      label: PLUGIN_ARIONUM.CURRENCIES
+      help: PLUGIN_ARIONUM.CURRENCIES_HELP
+      options:
+        'ETH': 'ETH'
+        'USD': 'USD'
+        'AUD': 'AUD'
+        'BRL': 'BRL'
+        'CAD': 'CAD'
+        'CHF': 'CHF'
+        'CLP': 'CLP'
+        'CNY': 'CNY'
+        'DKK': 'DKK'
+        'EUR': 'EUR'
+        'GBP': 'GBP'
+        'HKD': 'HKD'
+        'INR': 'INR'
+        'ISK': 'ISK'
+        'JPY': 'JPY'
+        'KRW': 'KRW'
+        'NZD': 'NZD'
+        'PLN': 'PLN'
+        'RUB': 'RUB'
+        'SEK': 'SEK'
+        'SGD': 'SGD'
+        'THB': 'THB'
+        'TWD': 'TWD'
+      use: keys

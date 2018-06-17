@@ -1,0 +1,26 @@
+enabled: true
+wallet_addresses:
+currencies:
+  ETH: true
+  USD: true
+  EUR: true
+  GBP: false
+  JPY: false
+  AUD: false
+  BRL: false
+  CAD: false
+  CHF: false
+  CLP: false
+  CNY: false
+  DKK: false
+  HKD: false
+  INR: false
+  ISK: false
+  KRW: false
+  NZD: false
+  PLN: false
+  RUB: false
+  SEK: false
+  SGD: false
+  THB: false
+  TWD: false
