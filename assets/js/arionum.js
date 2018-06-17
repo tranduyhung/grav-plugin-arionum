@@ -84,6 +84,7 @@ function getTransaction() {
 
 function getExchanges() {
   $('.currency .loader-container').show();
+  $('.currency .value').empty();
 
   $.ajax({
     url: window.GravAdmin.config.current_url + '?task=getExchanges',
@@ -112,6 +113,9 @@ function getBalances() {
 
   if (wallets.length == 0)
     return;
+
+  $('.balance .loader-container, .exchange .loader-container').show();
+  $('.balance .value, .exchange .value').empty();
 
   wallets.each(function(i, e) {
     var address = $(e).data('hint');
