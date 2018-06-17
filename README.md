@@ -48,7 +48,7 @@ Click `Arionum` on the left menu in admin area and use the available tools.
 
 ## Contribution
 
-This plugin is just a hobby project and was built pretty quickly. Please feel free to submit your improvements and features tp `dev` branch.
+This plugin is just a hobby project and was built pretty quickly. Please feel free to submit your improvements and features to `dev` branch.
 
 ## Donation
 
